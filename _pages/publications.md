@@ -7,7 +7,7 @@ permalink: /publications/
 
 ## Publications
 
-<ol reversed>
+<ol reversed markdown="1">
 <li>Horstkotte, T., Assmann, J.J, Hedenås, H., Normand, S. and Olofsson, J. (2026), Increase in plant productivity in the tundra in Sweden is not related to increasing presence of warm-adapted vascular plant species. Ecography. e08201. https://doi.org/10.1002/ecog.08201</li>
 
 <li>Assmann, J.J., Schaepman-Strub, G., Liski, A.H., Chen, A., Neumann, C., Bischof, K., Danks, F.S., Fernandes, I., Fischer, D.M., Frederiksen, M.Q., García Criado, M., Heim, R., Johansen, M.P., Jungblut, S., Kim, H., Kristjánsson, B.K., Ksenofontov, S.S., Kuokkanen, R., Kuusanniemi-Abbotts, N., Mevenkamp, H., Olsen, J., Nutti Pilflykt, K., Prothero, O., Ryf, D., Schaad, L., Wang, I.V., White, K., & Zemlianskii, V. (2026). Envisioning desirable futures for Arctic biodiversity to overcome “doom and gloom”. Arctic Science. 12, 1-7. https://doi.org/10.1139/as-2025-0103</li>
