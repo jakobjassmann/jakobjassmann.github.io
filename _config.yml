@@ -34,4 +34,5 @@ minimal_mistakes_skin: "default"
 markdown: kramdown
 
 include:
+  - _assets
   - _pages
