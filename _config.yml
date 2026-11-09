@@ -14,7 +14,7 @@ author:
   name: "Jakob Assmann"
   bio: "Associate Senior Lecturer, University of Gothenburg"
 
-minimal_mistakes_skin: "contrast"
+minimal_mistakes_skin: "default"
 
 markdown: kramdown
 
