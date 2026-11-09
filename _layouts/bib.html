@@ -6,75 +6,58 @@ layout: default
 {% assign n_authors = authors.size %}
 
 <p class="bibliography-entry">
-<li>
-  
-{% for author in authors %}
 
 {% if n_authors <= 6 %}
 
-  {% assign initials = "" %}
-
-  {% capture initials %}
-  {% for n in author.first | split: " " %}
-  {{ n | slice: 0 }}
-  {% endfor %}
-  {% endcapture %}
-
-  {% unless forloop.first %}, {% endunless %}
-  
-  {% if author.last == "Assmann" %}
-
-    {% if forloop.first %}
-      <strong>{{ author.last }} {{ initials }}</strong>
-    {% else %}
-      <strong>{{ initials }} {{ author.last }}</strong>
-    {% endif %}
-
-  {% else %}
-
-    {% if forloop.first %}
-      {{ author.last }} {{ initials }}
-    {% else %}
-      {{ initials }} {{ author.last }}
-    {% endif %}
-
-  {% endif %}
-
-  {% endif %}
-
-  {% if n_authors > 6 %}
-
-  {% assign first_author = authors.first %}
-
-  {% assign initials = "" %}
-
-  {% capture initials %}
-  {% for n in author.first | split: " " %}
-  {{ n | slice: 0 }}
-  {% endfor %}
-  {% endcapture %}
-
-  {{ first_author.last }} {{ initials }} et al.
-
-  {% assign contains_assmann = false %}
-
   {% for author in authors %}
-    {% if author.last == "Assmann" %}
-      {% assign contains_assmann = true %}
-    {% endif %}
+
+    {% assign initials = "" %}
+
+    {% capture initials -%}
+      {%- for n in author.first | split: " " -%}
+        {{- n | slice: 0 -}}
+      {%- endfor -%}
+    {%- endcapture %}
+
+    {% unless forloop.first %}, {% endunless %}
   
-  {% if contains_assmann %}
-    incl. <strong>J Assmann</strong>
-    
-  {% endif %}
+    {% if author.last == "Assmann" %}
+
+      {% if forloop.first %}
+        <strong>{{ author.last }} {{ initials }}</strong>
+      {% else %}
+        <strong>{{ initials }} {{ author.last }}</strong>
+      {% endif %}
+
+    {% else %}
+
+      {% if forloop.first %}
+        {{ author.last }} {{ initials }}
+      {% else %}
+        {{ initials }} {{ author.last }}
+      {% endif %}
+
+    {% endif %}
 
   {% endfor %}
 
 {% endif %}
 
-{% endfor %}.
+{% if n_authors > 6 %}
 
+  {% assign first_author = authors.first %}
 
+  {% assign initials = "" %}
+
+    {% capture initials -%}
+      {%- for n in author.first | split: " " -%}
+        {{- n | slice: 0 -}}
+      {%- endfor -%}
+    {%- endcapture %}
+
+  {{ first_author.last }} {{ initials }} et al. incl. <strong>JJ Assmann</strong>
+
+{% endif %}
 
 {% if entry.year %}
   <strong>{{ entry.year }}</strong>
@@ -99,5 +82,4 @@ layout: default
   </a>
 {% endif %}
 
-</li>
 </p>
