@@ -1,0 +1,12 @@
+<div class="publication">
+
+<strong>{{entry.title}}</strong><br>
+
+{{reference}}
+
+{% if entry.doi %}
+  <br>
+  <a href="https://doi.org/{{entry.doi}}">DOI</a>
+{% endif %}
+
+</div>
