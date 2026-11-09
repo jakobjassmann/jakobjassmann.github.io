@@ -3,10 +3,14 @@ layout: default
 ---
 
 {% assign authors = entry.author_array %}
+{% assign n_authors = authors.size %}
 
 <p class="bibliography-entry">
-
+<li>
+  
 {% for author in authors %}
+
+{% if n_authors <= 6 %}
 
   {% assign initials = "" %}
 
@@ -17,7 +21,7 @@ layout: default
   {% endcapture %}
 
   {% unless forloop.first %}, {% endunless %}
-
+  
   {% if author.last == "Assmann" %}
 
     {% if forloop.first %}
@@ -34,9 +38,43 @@ layout: default
       {{ initials }} {{ author.last }}
     {% endif %}
 
+  {% endif %}
+
+  {% endif %}
+
+  {% if n_authors > 6 %}
+
+  {% assign first_author = authors.first %}
+
+  {% assign initials = "" %}
+
+  {% capture initials %}
+  {% for n in author.first | split: " " %}
+  {{ n | slice: 0 }}
+  {% endfor %}
+  {% endcapture %}
+
+  {{ first_author.last }} {{ initials }} et al.
+
+  {% assign contains_assmann = false %}
+
+  {% for author in authors %}
+    {% if author.last == "Assmann" %}
+      {% assign contains_assmann = true %}
+    {% endif %}
+  
+  {% if contains_assmann %}
+    incl. <strong>J Assmann</strong>
+    
+  {% endif %}
+
+  {% endfor %}
+
 {% endif %}
 
 {% endfor %}.
+
+
 
 {% if entry.year %}
   <strong>{{ entry.year }}</strong>
@@ -61,4 +99,5 @@ layout: default
   </a>
 {% endif %}
 
+</li>
 </p>

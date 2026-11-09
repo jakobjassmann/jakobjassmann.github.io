@@ -8,7 +8,11 @@ permalink: /publications/
 
 ## Publications
 
-{% bibliography -- group_by year %}
+<ol reversed>
+
+{% bibliography --query @* %}
+
+</ol>
 
 ## PhD Thesis
 
