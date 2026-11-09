@@ -2,7 +2,9 @@
 
 <strong>{{entry.title}}</strong><br>
 
-{{reference}}
+{% assign ref = reference | replace: "Assmann, Jakob J.", "<strong>Assmann, Jakob J.</strong>" %}
+
+{{ref}}
 
 {% if entry.doi %}
   <br>
