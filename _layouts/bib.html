@@ -6,7 +6,6 @@ layout: default
 {% assign n_authors = authors.size %}
 
 <p class="bibliography-entry">
-
 {% if n_authors <= 6 %}
 
   {% for author in authors %}
@@ -24,17 +23,17 @@ layout: default
     {% if author.last == "Assmann" %}
 
       {% if forloop.first %}
-        <strong>{{ author.last }} {{ initials}}</strong>
+        <strong>{{ author.last }} {{ initials -}}</strong>
       {% else %}
-        <strong>{{ initials }} {{ author.last}}</strong>
+        <strong>{{ initials }} {{ author.last -}}</strong>
       {% endif %}
 
     {% else %}
 
       {% if forloop.first %}
-        {{ author.last }} {{ initials}}
+        {{ author.last }} {{ initials -}}
       {% else %}
-        {{ initials }} {{ author.last}}
+        {{ initials }} {{ author.last -}}
       {% endif %}
 
     {% endif %}
@@ -68,7 +67,7 @@ layout: default
   {% if contains_assmann %}
     incl. <strong>JJ Assmann</strong>
   {% endif %}
-{% endif %}
+{% endif %}.
 
 {% if entry.year %}
   <strong>{{ entry.year }}</strong>
@@ -84,7 +83,7 @@ layout: default
   <em>{{ entry.booktitle }}</em>.
 {% elsif entry.publisher %}
   <em>{{ entry.publisher }}</em>.
-{% endif %}.
+{% endif %}
 
 {% if entry.doi %}
   <br>
@@ -92,5 +91,4 @@ layout: default
     https://doi.org/{{ entry.doi }}
   </a>
 {% endif %}
-
 </p>
