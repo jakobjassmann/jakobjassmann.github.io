@@ -1,6 +1,7 @@
 ---
-title: "Research"
-permalink: /research/
+layout: single
+title: "Teaching"
+permalink: /teaching/
 ---
 
-Research content goes here.
+Teaching content goes here

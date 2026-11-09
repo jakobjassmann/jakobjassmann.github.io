@@ -12,8 +12,23 @@ plugins:
 
 author:
   name: "Jakob Assmann"
+  avatar: "/assets/images/avatar.jpg"
   bio: "Associate Senior Lecturer, University of Gothenburg"
 
+author:
+  name: "Jakob Assmann"
+
+  bio: "Associate Senior Lecturer, University of Gothenburg"
+
+  links:
+    - label: "University of Gothenburg"
+      url: "https://www.gu.se/en/about/find-staff/jakobassmann"
+
+    - label: "Google Scholar"
+      url: "https://scholar.google.com/citations?user=pO9J3AEAAAAJ&hl=en"
+
+    - label: "GitHub"
+      url: "https://github.com/jakobjassmann"
 minimal_mistakes_skin: "default"
 
 markdown: kramdown

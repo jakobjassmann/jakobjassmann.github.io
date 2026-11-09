@@ -1,6 +1,6 @@
 ---
 title: "Research"
-permalink: /research/
+permalink: /publications/
 ---
 
 [Goolge Scholar Profile](https://scholar.google.com/citations?user=pO9J3AEAAAAJ&hl=en)
