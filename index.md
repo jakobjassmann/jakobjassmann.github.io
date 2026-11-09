@@ -2,7 +2,8 @@
 layout: splash
 title: "Jakob Assmann"
 header:
-  overlay_image: /assets/images/arctic-banner.jpg
+  overlay_image: /assets/images/zackenberg-drone.jpg
+
 ---
 
 Spatial Ecology, Remote Sensing & Arctic Change
