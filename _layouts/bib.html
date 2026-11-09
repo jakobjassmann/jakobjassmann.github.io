@@ -29,9 +29,9 @@ layout: default
       {%- endif -%}
     {%- else -%}
       {%- if forloop.first -%}
-        {{- author.last -}} {{- initials -}}.
+        {{- author.last -}} {{- initials -}}. 
       {%- else -%}
-        {{- initials -}}. {{- author.last -}}
+        {{- initials -}}. {{- author.last -}} 
       {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
@@ -55,22 +55,22 @@ layout: default
       {%- endif -%}
     {%- endfor -%}
     {%- if contains_assmann -%}
-      incl. <strong>JJ Assmann</strong>
+      incl. <strong>J Assmann</strong>
     {%- endif -%}
   {%- endif -%}
-{%- endif -%}.
+{%- endif -%}. 
 {%- if entry.year -%}
   <strong>{{- entry.year -}}</strong>
 {%- elsif entry.date -%}
   <strong>{{- entry.date | date: "%Y" -}}</strong>
-{%- endif -%}.
-{{- entry.title -}}.
+{%- endif -%}. 
+{{- entry.title -}}. 
 {%- if entry.journal -%}
-  <em>{{- entry.journal -}}</em>.
+  <em>{{- entry.journal -}}</em>. 
 {%- elsif entry.booktitle -%}
-  <em>{{- entry.booktitle -}}</em>.
+  <em>{{- entry.booktitle -}}</em>. 
 {%- elsif entry.publisher -%}
-  <em>{{- entry.publisher -}}</em>.
+  <em>{{- entry.publisher -}}</em>. 
 {%- endif -%}
 {%- if entry.doi -%}
   <br>
