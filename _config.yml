@@ -5,10 +5,11 @@ description: "Spatial Ecology | Remote Sensing | Arctic Change"
 url: "https://jakobjassmann.github.io"
 baseurl: ""
 
-remote_theme: "mmistakes/minimal-mistakes"
+theme: minimal-mistakes-jekyll
 
 plugins:
   - jekyll-include-cache
+  - jekyll-scholar
 
 author:
   name: "Jakob Assmann"
