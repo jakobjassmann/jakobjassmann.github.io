@@ -1,5 +1,6 @@
-title: "Jakob Assmann"
-name: "Jakob Assmann"
+title: "Jakob J. Assmann"
+name: "Jakob J. Assmann"
+subtitle: "Spatial Ecology | Remote Sensing | Arctic Change"
 description: "Spatial Ecology | Remote Sensing | Arctic Change"
 
 url: "https://jakobjassmann.github.io"
@@ -12,13 +13,8 @@ plugins:
   - jekyll-scholar
 
 author:
-  name: "Jakob Assmann"
+  name: "Jakob J. Assmann"
   avatar: "/assets/images/avatar.jpg"
-  bio: "Associate Senior Lecturer, University of Gothenburg"
-
-author:
-  name: "Jakob Assmann"
-
   bio: "Associate Senior Lecturer, University of Gothenburg"
 
   links:
@@ -30,6 +26,7 @@ author:
 
     - label: "GitHub"
       url: "https://github.com/jakobjassmann"
+
 minimal_mistakes_skin: "default"
 
 markdown: kramdown
