@@ -24,17 +24,17 @@ layout: default
     {% if author.last == "Assmann" %}
 
       {% if forloop.first %}
-        <strong>{{ author.last }} {{ initials }}</strong>
+        <strong>{{ author.last }} {{ initials}}</strong>
       {% else %}
-        <strong>{{ initials }} {{ author.last }}</strong>
+        <strong>{{ initials }} {{ author.last}}</strong>
       {% endif %}
 
     {% else %}
 
       {% if forloop.first %}
-        {{ author.last }} {{ initials }}
+        {{ author.last }} {{ initials}}
       {% else %}
-        {{ initials }} {{ author.last }}
+        {{ initials }} {{ author.last}}
       {% endif %}
 
     {% endif %}
@@ -50,13 +50,24 @@ layout: default
   {% assign initials = "" %}
 
     {% capture initials -%}
-      {%- for n in author.first | split: " " -%}
+      {%- for n in first_author.first | split: " " -%}
         {{- n | slice: 0 -}}
       {%- endfor -%}
     {%- endcapture %}
 
-  {{ first_author.last }} {{ initials }} et al. incl. <strong>JJ Assmann</strong>
+  {{ first_author.last }} {{ initials }} et al.
 
+  {% assign contains_assmann = false %}
+
+  {% for author in authors %}
+    {% if author.last == "Assmann" %}
+      {% assign contains_assmann = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if contains_assmann %}
+    incl. <strong>JJ Assmann</strong>
+  {% endif %}
 {% endif %}
 
 {% if entry.year %}
