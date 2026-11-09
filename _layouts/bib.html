@@ -9,43 +9,42 @@ layout: default
 {% for author in authors %}
 
   {% assign initials = "" %}
-  {% assign names = author.first | split: " " %}
 
-  {% for n in names %}
-    {% assign initials = initials | append: n | slice: 0 %}
+  {% capture initials %}
+  {% for n in author.first | split: " " %}
+  {{ n | slice: 0 }}
   {% endfor %}
+  {% endcapture %}
 
-{% if author.last == "Assmann" %}
+  {% unless forloop.first %}, {% endunless %}
 
-  {% if forloop.first %}
-    <strong>{{ author.last }} {{ initials }}</strong>
+  {% if author.last == "Assmann" %}
+
+    {% if forloop.first %}
+      <strong>{{ author.last }} {{ initials }}</strong>
+    {% else %}
+      <strong>{{ initials }} {{ author.last }}</strong>
+    {% endif %}
+
   {% else %}
-    <strong>{{ initials }} {{ author.last }}</strong>
-  {% endif %}
 
-{% else %}
-
-  {% if forloop.first %}
-    {{ author.last }} {{ initials }}
-  {% else %}
-    {{ initials }} {{ author.last }}
-  {% endif %}
+    {% if forloop.first %}
+      {{ author.last }} {{ initials }}
+    {% else %}
+      {{ initials }} {{ author.last }}
+    {% endif %}
 
 {% endif %}
 
-{% endfor %}
+{% endfor %}.
 
 {% if entry.year %}
-  ({{ entry.year }})
+  <strong>{{ entry.year }}</strong>
 {% elsif entry.date %}
-  ({{ entry.date | date: "%Y" }})
+  <strong>{{ entry.date | date: "%Y" }}</strong>
 {% endif %}.
 
-<br>
-
 {{ entry.title }}.
-
-<br>
 
 {% if entry.journal %}
   <em>{{ entry.journal }}</em>.
@@ -53,21 +52,7 @@ layout: default
   <em>{{ entry.booktitle }}</em>.
 {% elsif entry.publisher %}
   <em>{{ entry.publisher }}</em>.
-{% endif %}
-
-{% if entry.volume %}
-  {{ entry.volume }}
-{% endif %}
-
-{% if entry.number %}
-  ({{ entry.number }})
-{% endif %}
-
-{% if entry.pages %}
-  :{{ entry.pages }}
-{% endif %}
-
-.
+{% endif %}.
 
 {% if entry.doi %}
   <br>
