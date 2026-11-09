@@ -35,7 +35,7 @@ include:
   - _pages
 
 scholar:
-  style: apa
+  style: ./_bibliography/style.csl
   locale: en
 
   source: ./_bibliography

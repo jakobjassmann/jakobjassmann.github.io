@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl"
+       version="1.0"
+       class="in-text"
+       default-locale="en-US">
+
+  <info>
+    <title>Academic Website (Assmann)</title>
+    <id>http://www.zotero.org/styles/academic-website-assmann</id>
+    <link href="http://www.zotero.org/styles/academic-website-assmann" rel="self"/>
+    <author>
+      <name>Jakob Assmann & Copilot</name>
+    </author>
+    <category citation-format="author-date"/>
+    <updated>2026-11-09T00:00:00+00:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name initialize-with=""
+            delimiter=", "
+            and="text"
+            sort-separator=" "/>
+    </names>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+
+  <macro name="container">
+    <text variable="container-title" font-style="italic"/>
+  </macro>
+
+  <citation>
+    <layout delimiter="; ">
+      <group>
+        <text macro="author"/>
+        <text macro="issued" prefix=" (" suffix=")"/>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography hanging-indent="false" line-spacing="1.2" entry-spacing="1">
+    <layout suffix=".">
+      <group delimiter=" ">
+        <text macro="author"/>
+        <text macro="issued" prefix="(" suffix=")."/>
+      </group>
+
+      <text macro="title" suffix="."/>
+
+      <text macro="container" suffix="."/>
+
+      <text variable="DOI" prefix=" https://doi.org/"/>
+    </layout>
+  </bibliography>
+
+</style>
